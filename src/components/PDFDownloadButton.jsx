@@ -1,5 +1,4 @@
 import { useState } from "react";
-import html2pdf from "html2pdf.js";
 
 function sanitizeFilePart(s) {
   return String(s || "user")
@@ -16,6 +15,7 @@ export default function PDFDownloadButton({ targetRef, userName, invoiceNumber, 
     if (!el || !invoiceNumber) return;
     setBusy(true);
     try {
+      const { default: html2pdf } = await import("html2pdf.js");
       const name = sanitizeFilePart(userName);
       const inv = sanitizeFilePart(invoiceNumber);
       const filename = `invoice-${name}-${inv}.pdf`;
