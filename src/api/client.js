@@ -35,7 +35,13 @@ export async function api(path, options = {}) {
     "Content-Type": "application/json",
     ...(options.headers || {}),
   };
-  const res = await fetch(url, { ...options, headers });
+  // Default no-store so conditional GETs never return 304: fetch marks 304 as
+  // !res.ok and the body is empty, which breaks JSON parsing and error handling.
+  const res = await fetch(url, {
+    ...options,
+    headers,
+    cache: options.cache ?? "no-store",
+  });
   const text = await res.text();
   let body = {};
   try {
