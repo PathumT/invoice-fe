@@ -24,7 +24,6 @@ export default function EditorialInvoiceLayout({ derived }) {
           </div>
           <div className="inv-editorial-header-right">
             <div className="inv-editorial-inv-no">{derived.invNo}</div>
-            <span className={`status-pill status-pill--${slug}`}>UNPAID</span>
           </div>
         </header>
 

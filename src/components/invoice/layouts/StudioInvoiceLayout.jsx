@@ -23,7 +23,6 @@ export default function StudioInvoiceLayout({ derived }) {
             <span className="inv-studio-invoice-label">Invoice</span>
           </div>
           <div className="inv-studio-hero-right">
-            <span className={`status-pill status-pill--${slug} inv-studio-status`}>UNPAID</span>
             <dl className="inv-studio-meta-dl">
               <div>
                 <dt>#</dt>

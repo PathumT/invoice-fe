@@ -23,7 +23,6 @@ export default function ExecutiveInvoiceLayout({ derived }) {
             <p className="invoice-tagline">Professional services invoice</p>
           </div>
           <div className="invoice-sheet-header-meta">
-            <span className={`status-pill status-pill--${slug}`}>UNPAID</span>
             <div className="invoice-meta">
               <div>
                 <strong>Invoice #</strong> {derived.invNo}
